@@ -1,0 +1,51 @@
+
+FRIENDS WITH BENEFITS TECHNICAL DOC
+===================================
+
+Pixel Perfect Stuff
+-------------------
+-target screen resolution is 960 x 540 px with pixel block size being 16x16
+-sprites are imported at 160 pixels per unit
+-orthographic camera size is set to 1.6875 => 160 = (540/(screenRes * 2))
+-the ProGrids plugin greatly helps with snapping and positioning tiles
+-to enable ProGrids go to Tools/ProGrids/ProGrids Window
+-change the ProGrids snap settings to 0.05 units (this equals 8 pixels in the game world)
+-each sprite should use the "BaseSpriteMaterial" material if not using a custom material
+
+
+
+Level Building
+--------------
+-levels should have a root level object where all other objects (level tiles, collision volumes, etc) are parented
+-each root level object should have a "LevelManager" component attached
+-each type of level object should have its own parent as well so the level stays organized
+-place tiles for level layout
+-buffer tiles should be place outside of camera to account for screen shake
+-once level tiles are placed you can start manually setting collision volumes
+-resize collision volumes using the BoxCollider2D Size settings rather than scaling the game object
+-it's important that collision volumes are flush along the x-axis, meaning that for each continuous horizontal platform there should be one solid collision
+-set collision volume layers to "Obstacle"
+-when level layout is complete you should add 4 spawn points (just empty game objects); the spawn points need to be added to the "LevelManager" spawn points array in the inspector
+-a finished level should have a heirarchy like the following:
+	-LevelRoot
+		-Tiles
+			-Tile01
+			-Tile02
+			-Tile03
+			-etc...
+		-CollisionVolumes
+			-CollisionVolume01
+			-CollisionVolume02
+			-CollisionVolume03
+			-etc...
+		-Props
+			-Prop01
+			-Prop02
+			-Prop03
+			-etc...
+		-SpawnPoints
+			-SpawnPoint01
+			-SpawnPoint02
+			-SpawnPoint03
+			-SpawnPoint04
+-when level is totally finished it should be added to "Assets/Resources/Levels"
