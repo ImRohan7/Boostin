@@ -5641,7 +5641,7 @@ GameObject:
   - component: {fileID: 700116198872057908}
   - component: {fileID: 1064782976321504197}
   m_Layer: 0
-  m_Name: TestLevel
+  m_Name: Example Tile Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5722,7 +5722,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700116199167675534}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 2, y: 2, z: 2}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
