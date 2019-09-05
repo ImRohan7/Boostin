@@ -98,6 +98,7 @@ public class PlayerController : WrappableObject
 
     private new void Update()
     {
+        
         base.Update();
 
         if (!isDashing)
