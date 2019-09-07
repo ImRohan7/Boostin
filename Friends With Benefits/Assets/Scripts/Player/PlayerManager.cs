@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     
     private Transform spawnPoint;
     private int playerID;
+
+    [SerializeField]
     private int killCount;
 
     public void InitializePlayerManager(Transform newSpawnPoint, int newPlayerID)
@@ -41,6 +43,7 @@ public class PlayerManager : MonoBehaviour
     public void PlayerKill()
     {
         killCount++;
+        ScoreManager.Instance.increaseScore(playerID, killCount);
     }
 
     private IEnumerator PlayerRespawn()

@@ -98,7 +98,7 @@ public class PlayerController : WrappableObject
 
     private new void Update()
     {
-        
+       
         base.Update();
 
         if (!isDashing)
@@ -223,6 +223,31 @@ public class PlayerController : WrappableObject
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (GroundCheck() && velocity.y != 0f)
+        {
+            velocity.y = 0f;
+        }
+        WallCheck();
+        CeilingCheck();
+
+        //destroy player on head boop
+        if (HeadBoopCheck())
+        {
+            collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
+            TriggerKill();
+            velocity.y = jumpForce / 2;
+        }
+
+        if (isDashing && JavelinBoopCheck())
+        {
+            collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
+            TriggerKill();
+        }
+    }
+
 
     private bool GroundCheck()
     {
@@ -357,27 +382,5 @@ public class PlayerController : WrappableObject
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(GroundCheck() && velocity.y != 0f)
-        {
-            velocity.y = 0f;
-        }
-        WallCheck();
-        CeilingCheck();
-
-        //destroy player on head boop
-        if(HeadBoopCheck())
-        {
-            collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
-            TriggerKill();
-            velocity.y = jumpForce / 2;
-        }
-
-        if(isDashing && JavelinBoopCheck())
-        {
-            collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
-            TriggerKill();
-        }
-    }
+   
 }
