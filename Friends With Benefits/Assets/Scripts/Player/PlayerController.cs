@@ -6,7 +6,7 @@ public class PlayerController : WrappableObject
 {
     private Player playerInput;
     private PlayerManager playerManager;
-    private int playerID;
+    public int playerID;
 
     private Rigidbody2D rb;
     private Vector3 velocity;
@@ -226,25 +226,28 @@ public class PlayerController : WrappableObject
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GroundCheck() && velocity.y != 0f)
+        if (playerManager.isInvincible)
         {
-            velocity.y = 0f;
-        }
-        WallCheck();
-        CeilingCheck();
+            if (GroundCheck() && velocity.y != 0f)
+            {
+                velocity.y = 0f;
+            }
+            WallCheck();
+            CeilingCheck();
 
-        //destroy player on head boop
-        if (HeadBoopCheck())
-        {
-            collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
-            TriggerKill();
-            velocity.y = jumpForce / 2;
-        }
+            //destroy player on head boop
+            if (HeadBoopCheck())
+            {
+                collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
+                TriggerKill();
+                velocity.y = jumpForce / 2;
+            }
 
-        if (isDashing && JavelinBoopCheck())
-        {
-            collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
-            TriggerKill();
+            if (isDashing && JavelinBoopCheck())
+            {
+                collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
+                TriggerKill();
+            }
         }
     }
 

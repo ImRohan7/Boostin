@@ -120,6 +120,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &96843939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96843941}
+  - component: {fileID: 96843940}
+  m_Layer: 0
+  m_Name: StreamManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &96843940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96843939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1181f7aa792f572438d4712eb05abc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  username: pinakj
+  password: oauth:otv8k21jrhucymz0emya1hq9zrjh6n
+  channelName: pinakj
+--- !u!4 &96843941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96843939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.937407, y: -0.051510368, z: -4.34375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &339394791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,6 +472,24 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6247837298501915996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &757539468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 646625328655462849, guid: 859b1ed262be9474887a1d0bb54b8fbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 646625328282105533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &757539473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757539468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b4bbc1578ab734499cca9d74e1a4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &795660713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1243,7 +1307,7 @@ PrefabInstance:
     - target: {fileID: 7837235108846880839, guid: 6f715543c419af14495a66d52c45e46c,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f715543c419af14495a66d52c45e46c, type: 3}

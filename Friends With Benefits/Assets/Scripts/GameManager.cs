@@ -14,13 +14,15 @@ public class GameManager : MonoBehaviour
 
     private Object[] levels;
     private GameObject currentLevel;
-
     private void Awake()
     {
         levels = Resources.LoadAll("Levels", typeof(GameObject));
         SetupNewLevel();
     }
 
+    private void Update()
+    {
+    }
     private void SetupNewLevel()
     {
         //spawn random level

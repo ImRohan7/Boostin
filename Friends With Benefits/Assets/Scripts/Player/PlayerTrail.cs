@@ -53,9 +53,12 @@ public class PlayerTrail : MonoBehaviour
                 if(other.gameObject != player.gameObject)
                 {
                     //currently just destroying other player, but could be extended to add bounce or anything else
-                    other.gameObject.GetComponent<PlayerController>().TriggerDeath();
-                    player.TriggerKill();
-                    Destroy(other);
+                    if (!GameObject.FindGameObjectWithTag(other.gameObject.GetComponent<PlayerController>().playerID.ToString()).GetComponent<PlayerManager>().isInvincible)
+                    {
+                        other.gameObject.GetComponent<PlayerController>().TriggerDeath();
+                        player.TriggerKill();
+                        Destroy(other);
+                    }
                 }
             }
         }

@@ -25,7 +25,7 @@ public class CameraShake : MonoBehaviour
         {
             InitShake();
         }
-        print(camPosition);
+        //print(camPosition);
     }
 
     public void InitShake()

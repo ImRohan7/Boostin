@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class PlayerManager : MonoBehaviour
     private GameObject currentPlayerCharacter;
     
     private Transform spawnPoint;
-    private int playerID;
+    public int playerID;
+    public bool isInvincible;
 
     [SerializeField]
     private int killCount;
@@ -17,7 +19,8 @@ public class PlayerManager : MonoBehaviour
     {
         spawnPoint = newSpawnPoint;
         playerID = newPlayerID;
-
+        isInvincible = false;
+        gameObject.tag = playerID.ToString();
         PlayerSpawn();
     }
 
@@ -52,4 +55,5 @@ public class PlayerManager : MonoBehaviour
 
         PlayerSpawn();
     }
+
 }
