@@ -46,7 +46,7 @@ public class PlayerTrail : MonoBehaviour
     {
         int collisionCount = trailParticleSystem.GetCollisionEvents(other, collisionEvents);
 
-        for(int i = 0; i < collisionCount; i++)
+       // for(int i = 0; i < collisionCount; i++)
         {
             if(other.gameObject.CompareTag("Player"))
             {
@@ -62,5 +62,6 @@ public class PlayerTrail : MonoBehaviour
                 }
             }
         }
+
     }
 }
