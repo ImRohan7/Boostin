@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour
     public void PlayerKill()
     {
         killCount++;
-        ScoreManager.Instance.showScore(playerID, killCount);
+       // ScoreManager.Instance.showScore(playerID, killCount);
         
     }
 
