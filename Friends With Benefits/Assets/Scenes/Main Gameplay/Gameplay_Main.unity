@@ -490,6 +490,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b4bbc1578ab734499cca9d74e1a4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BCount: 0
+  TCount: 0
+  CCount: 0
+  HCount: 0
+  bitchArray: 
 --- !u!1001 &795660713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,6 +828,12 @@ PrefabInstance:
       propertyPath: parent_ScoreWidgets
       value: 
       objectReference: {fileID: 1401140904}
+    - target: {fileID: 646625328655462851, guid: 859b1ed262be9474887a1d0bb54b8fbc,
+        type: 3}
+      propertyPath: PlayLevel
+      value: 
+      objectReference: {fileID: 700116198872057907, guid: fc119ac32c0286b448df3a2ebf5f7ebb,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 859b1ed262be9474887a1d0bb54b8fbc, type: 3}
 --- !u!1001 &1572694081708069881
