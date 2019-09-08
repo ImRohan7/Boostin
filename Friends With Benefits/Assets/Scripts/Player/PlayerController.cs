@@ -151,21 +151,28 @@ public class PlayerController : WrappableObject
     private void Move()
     {
         float direction = playerInput.GetAxis("Horizontal");
-       
-        //if(direction>0)
-        //{
-        //    direction = 1.0f;
-        //}
-        //else if(direction<0)
-        //{
-        //    direction = -1.0f;
-        //}
 
-        Debug.Log("Direction: " + direction);
+        // clamping the drag (enabling hard turns)
+        if (direction > 0)
+        {
+            direction = 1.0f;
+            if (velocity.x < 0)
+                velocity.x = 0;
+        }
+        else if (direction < 0)
+        {
+            direction = -1.0f;
+            if (velocity.x > 0)
+                velocity.x = 0;
+        }
+//        Debug.Log("Direction: " + direction);
+
         if (direction != 0f)
         {
             facingDirection = (int)Mathf.Sign(direction);
         }
+
+
 
         if (Mathf.Abs(direction) > 0.25f)
         {
@@ -177,7 +184,7 @@ public class PlayerController : WrappableObject
             {
                 velocity.x += acceleration * direction;
             }
-
+            
             velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
         }
         else
