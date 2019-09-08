@@ -35,9 +35,11 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    public void increaseScore(int id, int killCpunt)
+
+
+    public void showScore(int id, int score)
     {
-        displayStats[id].updateScore(killCpunt);
+        displayStats[id].updateScore(score);
     }
 
     // Update is called once per frame

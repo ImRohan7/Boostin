@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     public GameObject levelHolder;
     public GameObject playerHolder;
 
@@ -17,9 +19,19 @@ public class GameManager : MonoBehaviour
 
     public Object PlayLevel;
 
+    public PlayerManager[] playerManagers; // holds the player managers in Game
+
+    // Level stuff
+    public int RemainingPlayers;
+
+
     private void Awake()
     {
+        Instance = this;
+
         levels = Resources.LoadAll("Levels", typeof(GameObject));
+        playerManagers = new PlayerManager[playerCount];
+        RemainingPlayers = 4;
         SetupNewLevel();
     }
 
@@ -33,7 +45,54 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < playerCount; i++)
         {
             GameObject newPlayer = Instantiate(playerManager, Vector3.zero, Quaternion.identity, playerHolder.transform);
-            newPlayer.GetComponent<PlayerManager>().InitializePlayerManager(currentLevel.GetComponent<LevelManager>().spawnPoints[i], i);
+            playerManagers[i] = newPlayer.GetComponent<PlayerManager>();
+            playerManagers[i].InitializePlayerManager(currentLevel.GetComponent<LevelManager>().spawnPoints[i], i);
+        }
+    }
+
+
+    // when player dies
+    public void RegisterDeath()
+    {
+        RemainingPlayers--;
+
+        if (checkForrestart())
+        {
+            UpdateScore();
+            RestarLevel();
+        }
+    }
+
+    bool checkForrestart()
+    {
+        if (RemainingPlayers == 1)
+            return true;
+        else
+            return false;
+    }
+
+
+    void RestarLevel()
+    {
+        RemainingPlayers = playerCount; // 4
+
+        foreach (PlayerManager pm in playerManagers)
+        {
+            pm.PlayerSpawn();
+            
+        }
+    }
+
+
+    void UpdateScore()
+    {
+        foreach(PlayerManager pm in playerManagers)
+        {
+            if(pm.IsAlive)
+            {
+                pm.score++;
+                ScoreManager.Instance.showScore(pm.playerID, pm.score);
+            }
         }
     }
 }
