@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private Object[] levels;
     private GameObject currentLevel;
 
+    public Object PlayLevel;
+
     private void Awake()
     {
         levels = Resources.LoadAll("Levels", typeof(GameObject));
@@ -24,8 +26,8 @@ public class GameManager : MonoBehaviour
     private void SetupNewLevel()
     {
         //spawn random level
-        int rand = Random.Range(0, levels.Length);
-        currentLevel = Instantiate(levels[rand] as GameObject, Vector3.zero, Quaternion.identity, levelHolder.transform);
+        //int rand = Random.Range(0, levels.Length);
+        currentLevel = Instantiate(PlayLevel as GameObject, Vector3.zero, Quaternion.identity, levelHolder.transform);
 
         //spawn players
         for(int i = 0; i < playerCount; i++)

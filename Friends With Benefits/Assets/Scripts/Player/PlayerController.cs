@@ -151,7 +151,18 @@ public class PlayerController : WrappableObject
     private void Move()
     {
         float direction = playerInput.GetAxis("Horizontal");
-        if(direction != 0f)
+       
+        //if(direction>0)
+        //{
+        //    direction = 1.0f;
+        //}
+        //else if(direction<0)
+        //{
+        //    direction = -1.0f;
+        //}
+
+        Debug.Log("Direction: " + direction);
+        if (direction != 0f)
         {
             facingDirection = (int)Mathf.Sign(direction);
         }
