@@ -266,16 +266,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 212946961329665356}
-  gravity: -2.5
-  terminalVelocity: -25
+  gravity: -5
+  terminalVelocity: -40
   acceleration: 2.5
-  inAirAcceleration: 1.5
-  maxSpeed: 15
-  drag: 250
-  inAirDrag: 150
-  jumpForce: 45
-  dashTime: 0.3
-  dashSpeed: 50
+  inAirAcceleration: 6
+  maxSpeed: 40
+  drag: 150
+  inAirDrag: 75
+  jumpForce: 75
+  dashTime: 0.25
+  dashSpeed: 90
   dashCurve:
     serializedVersion: 2
     m_Curve:
