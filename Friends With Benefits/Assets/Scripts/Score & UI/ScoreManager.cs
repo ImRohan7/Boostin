@@ -20,6 +20,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private DisplayStats[] displayStats;
 
+    public int counter = 0;
+
     private void Awake()
     {
         Instance = this;

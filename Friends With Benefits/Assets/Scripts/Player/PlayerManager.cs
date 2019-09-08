@@ -44,6 +44,7 @@ public class PlayerManager : MonoBehaviour
     {
         killCount++;
         ScoreManager.Instance.increaseScore(playerID, killCount);
+        
     }
 
     private IEnumerator PlayerRespawn()

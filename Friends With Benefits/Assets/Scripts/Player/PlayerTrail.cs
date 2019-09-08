@@ -44,10 +44,11 @@ public class PlayerTrail : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        int collisionCount = trailParticleSystem.GetCollisionEvents(other, collisionEvents);
-
-        for(int i = 0; i < collisionCount; i++)
+      //  int collisionCount = trailParticleSystem.GetCollisionEvents(other, collisionEvents);
+        int times = 0;
+      //  for(int i = 0; i < collisionCount; i++)
         {
+            Debug.Log("Times: " + ++times);
             if(other.gameObject.CompareTag("Player"))
             {
                 if(other.gameObject != player.gameObject)
@@ -56,6 +57,7 @@ public class PlayerTrail : MonoBehaviour
                     other.gameObject.GetComponent<PlayerController>().TriggerDeath();
                     player.TriggerKill();
                     Destroy(other);
+                    Debug.Log("Trail Kill count: " + ++ScoreManager.Instance.counter);
                 }
             }
         }
