@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BitchManager : MonoBehaviour
 {
@@ -10,7 +11,10 @@ public class BitchManager : MonoBehaviour
     public int CWins;
     public int HWins;
 
+    public int numRounds;
+
     public int[] bitchArray;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +23,7 @@ public class BitchManager : MonoBehaviour
         TWins = 0;
         CWins = 0;
         HWins = 0;
+        numRounds = 0;
 
         bitchArray = new int[] { BWins, TWins, CWins, HWins };
     }
@@ -26,8 +31,25 @@ public class BitchManager : MonoBehaviour
     public int[] increaseBitchWin(ref int bitchWhichWon)
     {
         bitchWhichWon++;
+        numRounds++;
         bitchArray = new int[] { BWins, TWins, CWins, HWins };
 
         return bitchArray;
+    }
+
+    public bool CheckForWin()
+    {
+        int maxVal = bitchArray.Max();
+        int maxIndex = bitchArray.ToList().IndexOf(maxVal);
+
+        if(maxVal == 3)
+        {
+            return true;
+        }
+        else if(numRounds == 5)
+        {
+            return true;
+        }
+        return false;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class GameManager : MonoBehaviour
     // Level stuff
     public int RemainingPlayers;
 
+    private BitchManager bm;
+
+    private void Start()
+    {
+        bm = GameObject.Find("Bitch Manager").GetComponent<BitchManager>();   
+    }
 
     private void Awake()
     {
@@ -114,25 +121,58 @@ public class GameManager : MonoBehaviour
                 if (p.playerID == 0)
                 {
                     print("Bitch B Wins!");
+                    bm.increaseBitchWin(ref bm.BWins);
                 }
                 else if(p.playerID == 1)
                 {
                     print("Bitch T Wins!");
+                    bm.increaseBitchWin(ref bm.TWins);
                 }
                 else if(p.playerID == 2)
                 {
                     print("Bitch C Wins!");
+                    bm.increaseBitchWin(ref bm.CWins);
                 }
                 else if (p.playerID == 3)
                 {
                     print("Bitch H Wins!");
+                    bm.increaseBitchWin(ref bm.HWins);
                 }
             }
        }
+        if(!bm.CheckForWin())
+        {
+            yield return new WaitForSeconds(3f);
+            //TO DO: Add restarting and keeping track of rounds
+            RestarLevel();
+            yield return null;
+        }
+        else
+        {
+            DisplayWinner();
+        }
+    }
 
-        yield return new WaitForSeconds(3f);
-        //TO DO: Add restarting and keeping track of rounds
-        RestarLevel();
-        yield return null;
+    private void DisplayWinner()
+    {
+        print("Game Over.");
+        int maxVal = bm.bitchArray.Max();
+        int maxIndex = bm.bitchArray.ToList().IndexOf(maxVal);
+        if(maxIndex == 0)
+        {
+            print("Bitch B Wins the Game!");
+        }
+        else if(maxIndex == 1)
+        {
+            print("Bitch T Wins the Game!");
+        }
+        else if(maxIndex == 2)
+        {
+            print("Bitch C Wins the Game!");
+        }
+        else if(maxIndex == 3)
+        {
+            print("Bitch H Wins the Game!");
+        }
     }
 }
