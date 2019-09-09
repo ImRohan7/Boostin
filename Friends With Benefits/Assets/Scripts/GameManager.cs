@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
         if (checkForrestart())
         {
             UpdateScore();
-            RestarLevel();
+            //RestarLevel();
         }
     }
 
@@ -78,11 +79,8 @@ public class GameManager : MonoBehaviour
     {
         RemainingPlayers = playerCount; // 4
 
-        foreach (PlayerManager pm in playerManagers)
-        {
-            pm.PlayerSpawn();
-            
-        }
+        Scene loadedLevel = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(loadedLevel.buildIndex);
     }
 
 
@@ -101,35 +99,40 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         players = Object.FindObjectsOfType<PlayerManager>();
-
-        if(players.Length == 1)
+        if (players.Length == 1 || RemainingPlayers == 1)
         {
-            StartCoroutine(EndRound(players[0].playerID));
-            print(players[0].playerID);
+            StartCoroutine(EndRound());
         }
     }
 
-    IEnumerator EndRound(int playerID)
+    IEnumerator EndRound()
     {
-        if (playerID == 0)
-        {
-
-        }
-        else if (playerID == 1)
-        {
-
-        }
-        else if (playerID == 2)
-        {
-
-        }
-        else if (playerID == 3)
-        {
-
-        }
+       foreach(PlayerManager p in playerManagers)
+       {
+            if(p.IsAlive)
+            {
+                if (p.playerID == 0)
+                {
+                    print("Bitch B Wins!");
+                }
+                else if(p.playerID == 1)
+                {
+                    print("Bitch T Wins!");
+                }
+                else if(p.playerID == 2)
+                {
+                    print("Bitch C Wins!");
+                }
+                else if (p.playerID == 3)
+                {
+                    print("Bitch H Wins!");
+                }
+            }
+       }
 
         yield return new WaitForSeconds(3f);
-
         //TO DO: Add restarting and keeping track of rounds
+        RestarLevel();
+        yield return null;
     }
 }
