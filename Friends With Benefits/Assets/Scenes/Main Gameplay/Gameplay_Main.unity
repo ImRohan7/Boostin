@@ -309,9 +309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181f7aa792f572438d4712eb05abc3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: chaosinalunchbox
-  password: oauth:yp8ddthy3tfn1rdrfm22wgh84sj46w
-  channelName: chaosinalunchbox
+  username: pinakj
+  password: oauth:otv8k21jrhucymz0emya1hq9zrjh6n
+  channelName: pinakj
 --- !u!4 &96843941
 Transform:
   m_ObjectHideFlags: 0
@@ -2071,6 +2071,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 700116198872057907, guid: 652df5550497acf4297def7528da99b4,
         type: 3}
+    - target: {fileID: 646625328655462850, guid: 859b1ed262be9474887a1d0bb54b8fbc,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d63637976f11cd941b258c6c487a4a99, type: 3}
     - target: {fileID: 646625328497023902, guid: 859b1ed262be9474887a1d0bb54b8fbc,
         type: 3}
       propertyPath: m_LocalPosition.x

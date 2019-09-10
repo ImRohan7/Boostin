@@ -60,8 +60,11 @@ public class PlayerController : WrappableObject
 
     public void InitializePlayerController(PlayerManager newPlayerManager, int newPlayerID)
     {
+
         playerManager = newPlayerManager;
         playerID = newPlayerID;
+
+        changePlayerColor();
 
         playerInput = ReInput.players.GetPlayer(playerID);
 
@@ -102,6 +105,28 @@ public class PlayerController : WrappableObject
         }
     }
 
+    private void changePlayerColor()
+    {
+        if(playerID == 0)
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        }
+        else if(playerID == 1)
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
+
+        }
+        else if(playerID == 2)
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+
+        }
+        else if(playerID == 3)
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.magenta;
+
+        }
+    }
     private new void Update()
     {
        
@@ -288,14 +313,14 @@ public class PlayerController : WrappableObject
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("col enter 1");
+        //Debug.Log("col enter 1");
         if (!playerManager.isInvincible)
         {
          //   Debug.Log("col enter 2");
             if (GroundCheck() && velocity.y != 0f)
             {
                 velocity.y = 0f;
-                Debug.Log("Ground");
+            //    Debug.Log("Ground");
             }
             WallCheck();
             CeilingCheck();
