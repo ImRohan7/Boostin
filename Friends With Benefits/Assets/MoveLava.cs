@@ -15,7 +15,7 @@ public class MoveLava : MonoBehaviour
     void Start()
     {
         Vector3 pos = Camera.main.ViewportToWorldPoint(position);
-        gameObject.transform.position = pos;
+        //gameObject.transform.position = pos;
 
         up = false;
         right = false;
@@ -36,7 +36,7 @@ public class MoveLava : MonoBehaviour
         {
             if (gameObject.tag == "Right")
             {
-                transform.position += -transform.right * speed * Time.deltaTime;
+                transform.position += transform.right * speed * Time.deltaTime;
             }
             if (gameObject.tag == "Left")
             {

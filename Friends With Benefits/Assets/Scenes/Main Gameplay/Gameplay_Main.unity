@@ -266,8 +266,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 809587885
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c90894c0840873a4ab583b75abe7e3ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -426,15 +426,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260803954}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 43.3, y: -2.3, z: -233.24637}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 41.3, y: -2.3, z: -233.24637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 593571721}
   - {fileID: 27915272}
   m_Father: {fileID: 2030995896}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &260803956
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f768bab5f119e8843897cb7d7d44be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 1.305, y: 0.5, z: 10}
+  position: {x: 0.75, y: 0.5, z: 10}
   speed: 1
   right: 0
   up: 0
@@ -1015,8 +1015,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 809587885
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0e59ff794f7acce43b95d6e89f76796f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2119,12 +2119,12 @@ PrefabInstance:
     - target: {fileID: 2294628859502799132, guid: 30f040dd6b12c154aadcbd05ee4e5e1e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 32.7
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2294628859502799132, guid: 30f040dd6b12c154aadcbd05ee4e5e1e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4876
+      value: 5.1178055
       objectReference: {fileID: 0}
     - target: {fileID: 2294628859502799133, guid: 30f040dd6b12c154aadcbd05ee4e5e1e,
         type: 3}
