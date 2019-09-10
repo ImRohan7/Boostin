@@ -49,7 +49,10 @@ public class InvincibilityManager : MonoBehaviour
         int maxIndex = InvincibilityManager.Iinstance.bitchArray.ToList().IndexOf(maxVal);
         if(maxVal > 0)
         {
-            GameObject.FindGameObjectWithTag(maxIndex.ToString()).GetComponent<PlayerManager>().isInvincible = true;
+            PlayerManager pm = GameObject.FindGameObjectWithTag(maxIndex.ToString()).GetComponent<PlayerManager>();
+            pm.isInvincible = true;
+            ScoreManager.Instance.showMVB(pm.playerID);
+
         }
     }
 

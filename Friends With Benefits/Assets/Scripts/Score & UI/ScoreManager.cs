@@ -48,4 +48,19 @@ public class ScoreManager : MonoBehaviour
         displayStats = new DisplayUI[players];
         displayStats = parent_ScoreWidgets.transform.GetComponentsInChildren<DisplayUI>();
     }
+
+    public void showMVB(int id)
+    {
+        for (int i = 0; i < displayStats.Length; i++)
+        {
+            if (i == id)
+            {
+                displayStats[i].show_MVBLogo();
+            }
+            else
+            {
+                displayStats[i].show_originalLogo();
+            }
+        }
+    }
 }

@@ -11,6 +11,8 @@ public class UIHandler : MonoBehaviour
     public GameObject countDown_1;
     public GameObject countDown_GO;
 
+    public Sprite sprite_MVB;
+
     [SerializeField]
     private float waittime;
 
