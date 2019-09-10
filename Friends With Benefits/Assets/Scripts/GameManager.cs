@@ -36,7 +36,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         numAlive = 0;
-        bm = GameObject.Find("Bitch Manager").GetComponent<BitchManager>();   
+        bm = GameObject.Find("Bitch Manager").GetComponent<BitchManager>();
+
+        bm.showScoreonScreen();
     }
 
     private void Awake()
@@ -92,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         Scene loadedLevel = SceneManager.GetActiveScene();
         SceneManager.LoadScene(loadedLevel.buildIndex);
-     //   bm.showScoreonScreen();
+       
     }
 
 

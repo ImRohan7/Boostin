@@ -25,6 +25,7 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        initVars();
     }
 
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class ScoreManager : MonoBehaviour
     {
        // DontDestroyOnLoad(gameObject);
         Debug.Log("This");
-        initVars();
+       
     }
 
 
