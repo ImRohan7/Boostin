@@ -69,6 +69,14 @@ public class BitchManager : MonoBehaviour
         ScoreManager.Instance.showScore(3, HWins);
     }
 
+    public void clearIcons()
+    {
+        for(int i=0;i<4;i++)
+        {
+            ScoreManager.Instance.clear(i);
+        }
+    }
+
     public void spawnDeathShitWhennewRoundBegins()
     {
         for(int i=0; i<BWins; i++)

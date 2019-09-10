@@ -49,4 +49,13 @@ public class DisplayUI : MonoBehaviour
     {
         Instantiate(deathIcon, objParentDeathIcons.transform);
     }
+
+    public void clear()
+    {
+        for(int i=0; i<objParentDeathIcons.transform.childCount;i++)
+        {
+            Destroy(objParentDeathIcons.transform.GetChild(i).gameObject);
+
+        }
+    }
 }

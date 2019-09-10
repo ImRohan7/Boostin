@@ -34,6 +34,11 @@ public class ScoreManager : MonoBehaviour
        
     }
 
+    public void clear(int id)
+    {
+        displayStats[id].clear();
+    }
+
     public void spawnDeathIcons(int id)
     {
         displayStats[id].spawnDeathIcon();

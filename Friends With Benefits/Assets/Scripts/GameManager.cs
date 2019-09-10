@@ -187,6 +187,7 @@ public class GameManager : MonoBehaviour
        }
         if(!bm.CheckForWin())
         {
+
             UIHandler.Instance.showCountDown();
             yield return new WaitForSeconds(restartTime);
             //TO DO: Add restarting and keeping track of rounds
@@ -201,6 +202,8 @@ public class GameManager : MonoBehaviour
 
     private void DisplayWinner()
     {
+        bm.clearIcons();
+        bm.spawnDeathShitWhennewRoundBegins();
         print("Game Over.");
         int maxVal = bm.bitchArray.Max();
         int maxIndex = bm.bitchArray.ToList().IndexOf(maxVal);

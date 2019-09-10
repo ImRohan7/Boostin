@@ -56,6 +56,8 @@ public class PlayerController : WrappableObject
     public LayerMask obstacleLayerMask;
     public LayerMask enemyLayerMask;
 
+    bool chekforAnim = true;
+
     public void InitializePlayerController(PlayerManager newPlayerManager, int newPlayerID)
     {
         playerManager = newPlayerManager;
@@ -168,17 +170,22 @@ public class PlayerController : WrappableObject
     {
        // print(Mathf.Abs(velocity.x));
         float direction = playerInput.GetAxis("Horizontal");
+        //Debug.Log(direction);
         if(animator != null)
         {
-            if (direction == 0)
+           // Debug.Log(velocity);
+            if (velocity.x == 0)
             {
-                animator.SetBool("isRunning", false);
+             //   animator.SetBool("isRunning", false);
             }
-            else
+            else if(chekforAnim)
             {
-                animator.SetBool("isRunning", true);
+                chekforAnim = false;
+               //` StartCoroutine(Animate());
+                //animator.SetBool("isRunning", true);
             }
         }
+
         // clamping the drag (enabling hard turns)
         if (direction > 0)
         {
@@ -200,7 +207,6 @@ public class PlayerController : WrappableObject
         {
             facingDirection = (int)Mathf.Sign(direction);
         }
-
 
 
         if (Mathf.Abs(direction) > 0.25f)
@@ -230,6 +236,15 @@ public class PlayerController : WrappableObject
                 }
             }
         }
+    }
+
+
+    IEnumerator Animate()
+    {
+        animator.SetBool("isRunning", true);
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("isRunning", false);
+        chekforAnim = true;
     }
 
     private IEnumerator Dash()
