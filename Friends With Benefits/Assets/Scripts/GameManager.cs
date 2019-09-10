@@ -155,7 +155,8 @@ public class GameManager : MonoBehaviour
        }
         if(!bm.CheckForWin())
         {
-            yield return new WaitForSeconds(3f);
+            UIHandler.Instance.showCountDown();
+            yield return new WaitForSeconds(4f);
             //TO DO: Add restarting and keeping track of rounds
             RestarLevel();
             yield return null;

@@ -7,7 +7,7 @@ using TMPro;
  * Displaying score 
  * Displaying twitch stuff
  */ 
-
+    
 public class DisplayUI : MonoBehaviour
 {
 
