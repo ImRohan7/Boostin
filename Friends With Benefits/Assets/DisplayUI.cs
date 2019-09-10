@@ -17,12 +17,15 @@ public class DisplayUI : MonoBehaviour
 
     public Sprite img_logo_original;
     public Image img_logo;
+    public Image deathIcon;
+
+    public GameObject objParentDeathIcons;
 
     // Start is called before the first frame update
     void Start()
     {
         img_logo_original = img_logo.sprite;
-       
+        Instantiate(deathIcon, objParentDeathIcons.transform);
     }
 
     // update score text
