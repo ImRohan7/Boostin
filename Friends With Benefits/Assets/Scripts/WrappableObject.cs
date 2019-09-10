@@ -15,8 +15,9 @@ public class WrappableObject : MonoBehaviour
     {
         cam = Camera.main;
         distanceZ = Mathf.Abs(cam.transform.position.z + transform.position.z);
-        leftConstraint = cam.ScreenToWorldPoint(new Vector3(0f, 0f, distanceZ)).x;
-        rightConstraint = cam.ScreenToWorldPoint(new Vector3(Screen.width, 0f, distanceZ)).x;
+        leftConstraint = cam.ScreenToWorldPoint(new Vector3(0f + 190, 0f, distanceZ)).x;
+        rightConstraint = cam.ScreenToWorldPoint(new Vector3(Screen.width - 190, 0f, distanceZ)).x;
+        //Debug.Log("Width: " + Screen.width);
         bottomConstraint = cam.ScreenToWorldPoint(new Vector3(0f, 0f, distanceZ)).y;
         topConstraint = cam.ScreenToWorldPoint(new Vector3(0f, Screen.height, distanceZ)).y;
 
@@ -44,11 +45,13 @@ public class WrappableObject : MonoBehaviour
         if(transform.position.x < leftConstraint)
         {
             TriggerWrap();
+            Debug.Log("Left Wrap");
             transform.position = new Vector3(rightConstraint, transform.position.y, 0f);
         }
         else if (transform.position.x > rightConstraint)
         {
             TriggerWrap();
+            Debug.Log("Right Wrap");
             transform.position = new Vector3(leftConstraint, transform.position.y, 0f);
         }
         else if (transform.position.y > topConstraint)
