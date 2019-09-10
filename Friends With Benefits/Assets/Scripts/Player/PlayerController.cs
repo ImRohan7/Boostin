@@ -313,27 +313,32 @@ public class PlayerController : WrappableObject
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log("col enter 1");
-        if (!playerManager.isInvincible)
-        {
-         //   Debug.Log("col enter 2");
-            if (GroundCheck() && velocity.y != 0f)
-            {
-                velocity.y = 0f;
-            //    Debug.Log("Ground");
-            }
-            WallCheck();
-            CeilingCheck();
 
-            //destroy player on head boop
-            if (HeadBoopCheck())
+    //Debug.Log("col enter 1");
+        Debug.Log("col enter 2");
+        if (GroundCheck() && velocity.y != 0f)
+        {
+            velocity.y = 0f;
+        //    Debug.Log("Ground");
+        }
+        WallCheck();
+        CeilingCheck();
+
+        //destroy player on head boops
+        if (HeadBoopCheck())
+        {
+            if(!collision.transform.parent.gameObject.GetComponent<PlayerManager>().isInvincible)
             {
                 collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
                 TriggerKill();
                 velocity.y = jumpForce / 2;
             }
 
-            if (isDashing && JavelinBoopCheck())
+        }
+
+        if (isDashing && JavelinBoopCheck())
+        {
+            if (!collision.transform.parent.gameObject.GetComponent<PlayerManager>().isInvincible)
             {
                 collision.gameObject.GetComponent<PlayerController>().TriggerDeath();
                 TriggerKill();
