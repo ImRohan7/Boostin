@@ -33,10 +33,17 @@ public class GameManager : MonoBehaviour
 
     private int numAlive;
 
+    private float timer;
+
     private void Start()
     {
         numAlive = 0;
-        bm = GameObject.Find("Bitch Manager").GetComponent<BitchManager>();   
+        timer = 0.0f;
+        bm = GameObject.Find("Bitch Manager").GetComponent<BitchManager>();
+        print(bm.BWins);
+        print(bm.TWins);
+        print(bm.CWins);
+        print(bm.HWins);
     }
 
     private void Awake()
@@ -113,6 +120,23 @@ public class GameManager : MonoBehaviour
         if (RemainingPlayers == 1)
         {
             StartCoroutine(EndRound());
+        }
+        timer += Time.deltaTime;
+        if((int)timer > 30)
+        {
+            int x = UnityEngine.Random.Range(0, 1);
+            if(x == 0)
+            {
+                GameObject.Find("LavaLeft").GetComponent<MoveLava>().right = true;
+                GameObject.Find("LavaRight").GetComponent<MoveLava>().right = true;
+
+            }
+            else
+            {
+                GameObject.Find("LavaDown").GetComponent<MoveLava>().up = true;
+                GameObject.Find("LavaUp").GetComponent<MoveLava>().up = true;
+
+            }
         }
     }
 
