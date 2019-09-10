@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     private float timer;
 
+    
 
 
     private void Start()
@@ -54,6 +55,13 @@ public class GameManager : MonoBehaviour
         bm.showScoreonScreen();
         bm.spawnDeathShitWhennewRoundBegins();
        // UIHandler.Instance.showCountDown();
+
+        if(bm.Firstgame)
+        {
+            bm.Firstgame = false;
+            UIHandler.Instance.showCountDown();
+            Debug.Log("FG");
+        }
     }
 
     private void Awake()

@@ -15,6 +15,8 @@ public class BitchManager : MonoBehaviour
 
     public int[] bitchArray;
 
+    public bool Firstgame;
+
     // Start is called before the first frame update
     void Start()
     {
