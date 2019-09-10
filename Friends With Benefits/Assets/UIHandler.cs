@@ -9,7 +9,8 @@ public class UIHandler : MonoBehaviour
     public GameObject countDown_3;
     public GameObject countDown_2;
     public GameObject countDown_1;
-    public GameObject countDown_GO;
+
+    public Sprite sprite_MVB;
 
     [SerializeField]
     private float waittime;
@@ -34,6 +35,9 @@ public class UIHandler : MonoBehaviour
 
     IEnumerator countDown()
     {
+
+        yield return new WaitForSeconds(1f);
+
         countDown_3.gameObject.SetActive(true);
         yield return new WaitForSeconds(waittime);
 
@@ -46,11 +50,7 @@ public class UIHandler : MonoBehaviour
         yield return new WaitForSeconds(waittime);
 
         countDown_1.gameObject.SetActive(false);
-        countDown_GO.gameObject.SetActive(true);
-        yield return new WaitForSeconds(waittime-0.3f);
-
-        countDown_GO.gameObject.SetActive(false);
-
+       
     }
 
 

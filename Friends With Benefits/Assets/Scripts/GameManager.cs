@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject levelHolder;
     public GameObject playerHolder;
 
+    public int restartTime;
+
     public int playerCount;
 
     [Header("PREFAB REFERENCES")]
@@ -40,10 +42,10 @@ public class GameManager : MonoBehaviour
         numAlive = 0;
         timer = 0.0f;
         bm = GameObject.Find("Bitch Manager").GetComponent<BitchManager>();
-        print(bm.BWins);
-        print(bm.TWins);
-        print(bm.CWins);
-        print(bm.HWins);
+        //print(bm.BWins);
+        //print(bm.TWins);
+        //print(bm.CWins);
+        //print(bm.HWins);
 
         bm.showScoreonScreen();
     }
@@ -180,7 +182,7 @@ public class GameManager : MonoBehaviour
         if(!bm.CheckForWin())
         {
             UIHandler.Instance.showCountDown();
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(restartTime);
             //TO DO: Add restarting and keeping track of rounds
             RestarLevel();
             yield return null;
