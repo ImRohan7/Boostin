@@ -42,10 +42,10 @@ public class GameManager : MonoBehaviour
         numAlive = 0;
         timer = 0.0f;
         bm = GameObject.Find("Bitch Manager").GetComponent<BitchManager>();
-        print(bm.BWins);
-        print(bm.TWins);
-        print(bm.CWins);
-        print(bm.HWins);
+        //print(bm.BWins);
+        //print(bm.TWins);
+        //print(bm.CWins);
+        //print(bm.HWins);
 
         bm.showScoreonScreen();
     }
