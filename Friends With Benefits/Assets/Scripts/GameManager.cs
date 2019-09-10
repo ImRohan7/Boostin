@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     public UnityEngine.Object PlayLevel;
 
+    public UnityEngine.Object[] playLevels;
+
     public PlayerManager[] playerManagers; // holds the player managers in Game
 
     // Level stuff
@@ -100,7 +102,8 @@ public class GameManager : MonoBehaviour
     void RestarLevel()
     {
         RemainingPlayers = playerCount; // 4
-
+        
+        
         Scene loadedLevel = SceneManager.GetActiveScene();
         SceneManager.LoadScene(loadedLevel.buildIndex);
      //   bm.showScoreonScreen();
