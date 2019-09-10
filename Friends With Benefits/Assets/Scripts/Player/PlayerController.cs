@@ -8,6 +8,8 @@ public class PlayerController : WrappableObject
     private PlayerManager playerManager;
     public int playerID;
 
+    private Animator animator;
+
     private Rigidbody2D rb;
     private Vector3 velocity;
 
@@ -60,6 +62,8 @@ public class PlayerController : WrappableObject
         playerID = newPlayerID;
 
         playerInput = ReInput.players.GetPlayer(playerID);
+
+        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
 
         rb = GetComponent<Rigidbody2D>();
         velocity = Vector2.zero;
@@ -145,13 +149,14 @@ public class PlayerController : WrappableObject
         else if(!GroundCheck() && playerInput.GetButtonUp("Jump") && velocity.y > 0f) // variable jump
         {
             velocity.y /= 2.5f;
+
         }
     }
 
     private void Move()
     {
         float direction = playerInput.GetAxis("Horizontal");
-
+        //animator.SetBool("isRunning", true);
         // clamping the drag (enabling hard turns)
         if (direction > 0)
         {
