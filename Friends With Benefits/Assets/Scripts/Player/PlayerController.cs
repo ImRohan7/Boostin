@@ -8,7 +8,7 @@ public class PlayerController : WrappableObject
     private PlayerManager playerManager;
     public int playerID;
 
-    private Animator animator;
+   // private Animator animator;
 
     private Rigidbody2D rb;
     private Vector3 velocity;
@@ -68,7 +68,7 @@ public class PlayerController : WrappableObject
 
         playerInput = ReInput.players.GetPlayer(playerID);
 
-        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
+       // animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
 
         rb = GetComponent<Rigidbody2D>();
         velocity = Vector2.zero;
@@ -152,9 +152,9 @@ public class PlayerController : WrappableObject
 
         if(GroundCheck() == true)
         {
-            if(animator!=null)
+           // if(animator!=null)
             {
-                animator.SetBool("isJumping", false);
+               // animator.SetBool("isJumping", false);
 
             }
         }
@@ -176,7 +176,7 @@ public class PlayerController : WrappableObject
         if (GroundCheck() && playerInput.GetButtonDown("Jump")) // jump
         {
             velocity.y = jumpForce;
-            animator.SetBool("isJumping", true);
+          //  animator.SetBool("isJumping", true);
         }
         else if(!GroundCheck() && canDoubleJump && playerInput.GetButtonDown("Jump")) //double jump
         {
@@ -186,7 +186,7 @@ public class PlayerController : WrappableObject
         else if(!GroundCheck() && playerInput.GetButtonUp("Jump") && velocity.y > 0f) // variable jump
         {
             velocity.y /= 2.5f;
-            animator.SetBool("isJumping", true);
+           // animator.SetBool("isJumping", true);
 
         }
     }
@@ -196,7 +196,7 @@ public class PlayerController : WrappableObject
        // print(Mathf.Abs(velocity.x));
         float direction = playerInput.GetAxis("Horizontal");
         //Debug.Log(direction);
-        if(animator != null)
+      //  if(animator != null)
         {
            // Debug.Log(velocity);
             if (velocity.x == 0)
@@ -266,9 +266,9 @@ public class PlayerController : WrappableObject
 
     IEnumerator Animate()
     {
-        animator.SetBool("isRunning", true);
+      //  animator.SetBool("isRunning", true);
         yield return new WaitForSeconds(0.5f);
-        animator.SetBool("isRunning", false);
+       // animator.SetBool("isRunning", false);
         chekforAnim = true;
     }
 

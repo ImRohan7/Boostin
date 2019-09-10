@@ -150,6 +150,10 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            bm.BWins = 0;
+            bm.CWins = 0;
+            bm.TWins = 0;
+            bm.HWins = 0;
         }
     }
 
