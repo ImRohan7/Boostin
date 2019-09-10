@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         //print(bm.HWins);
 
         bm.showScoreonScreen();
+        print("Here");
     }
 
     private void Awake()
@@ -65,8 +66,8 @@ public class GameManager : MonoBehaviour
     private void SetupNewLevel()
     {
         //spawn random level
-        //int rand = Random.Range(0, levels.Length);
-        currentLevel = Instantiate(PlayLevel as GameObject, Vector3.zero, Quaternion.identity, levelHolder.transform);
+        int rand = UnityEngine.Random.Range(0, playLevels.Length);
+        currentLevel = Instantiate(playLevels[rand] as GameObject, Vector3.zero, Quaternion.identity, levelHolder.transform);
 
         //spawn players
         for(int i = 0; i < playerCount; i++)
@@ -102,8 +103,7 @@ public class GameManager : MonoBehaviour
     void RestarLevel()
     {
         RemainingPlayers = playerCount; // 4
-        
-        
+       
         Scene loadedLevel = SceneManager.GetActiveScene();
         SceneManager.LoadScene(loadedLevel.buildIndex);
      //   bm.showScoreonScreen();
