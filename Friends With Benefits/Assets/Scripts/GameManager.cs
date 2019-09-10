@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         //print(bm.HWins);
 
         bm.showScoreonScreen();
+        bm.spawnDeathShitWhennewRoundBegins();
         print("Here");
     }
 
@@ -180,6 +181,8 @@ public class GameManager : MonoBehaviour
                 }
 
                 bm.showScoreonScreen();
+                ScoreManager.Instance.spawnDeathIcons(p.playerID);
+
             }
        }
         if(!bm.CheckForWin())

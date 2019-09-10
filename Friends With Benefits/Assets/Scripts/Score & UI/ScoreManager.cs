@@ -34,17 +34,22 @@ public class ScoreManager : MonoBehaviour
        
     }
 
+    public void spawnDeathIcons(int id)
+    {
+        displayStats[id].spawnDeathIcon();
+    }
+
     public void showScore(int id, int score)
     {
         displayStats[id].updateScore(score);
     }
 
    public void initVars()
-    {
+   {
         parent_ScoreWidgets = GameObject.Find("Score Widgets");
         displayStats = new DisplayUI[players];
         displayStats = parent_ScoreWidgets.transform.GetComponentsInChildren<DisplayUI>();
-    }
+   }
 
     public void showMVB(int id)
     {

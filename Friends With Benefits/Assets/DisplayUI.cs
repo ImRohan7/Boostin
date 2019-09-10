@@ -25,7 +25,7 @@ public class DisplayUI : MonoBehaviour
     void Start()
     {
         img_logo_original = img_logo.sprite;
-        Instantiate(deathIcon, objParentDeathIcons.transform);
+       // spawnDeathIcon();
     }
 
     // update score text
@@ -43,5 +43,10 @@ public class DisplayUI : MonoBehaviour
     public void show_originalLogo()
     {
         img_logo.sprite = img_logo_original;
+    }
+
+    public void spawnDeathIcon()
+    {
+        Instantiate(deathIcon, objParentDeathIcons.transform);
     }
 }

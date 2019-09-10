@@ -20,12 +20,6 @@ public class UIHandler : MonoBehaviour
         Instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // display countdown images
     public void showCountDown()
     {
@@ -53,11 +47,4 @@ public class UIHandler : MonoBehaviour
        
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

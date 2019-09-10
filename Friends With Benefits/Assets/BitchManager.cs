@@ -68,4 +68,27 @@ public class BitchManager : MonoBehaviour
         ScoreManager.Instance.showScore(2, CWins);
         ScoreManager.Instance.showScore(3, HWins);
     }
+
+    public void spawnDeathShitWhennewRoundBegins()
+    {
+        for(int i=0; i<BWins; i++)
+        {
+            ScoreManager.Instance.spawnDeathIcons(0);
+        }
+
+        for (int i = 0; i < TWins; i++)
+        {
+            ScoreManager.Instance.spawnDeathIcons(1);
+        }
+
+        for (int i = 0; i < CWins; i++)
+        {
+            ScoreManager.Instance.spawnDeathIcons(2);
+        }
+
+        for (int i = 0; i < HWins; i++)
+        {
+            ScoreManager.Instance.spawnDeathIcons(3);
+        }
+    }
 }
