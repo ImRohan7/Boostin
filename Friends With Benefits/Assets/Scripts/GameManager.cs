@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     private float timer;
 
+
+
     private void Start()
     {
         numAlive = 0;
@@ -51,17 +53,19 @@ public class GameManager : MonoBehaviour
 
         bm.showScoreonScreen();
         bm.spawnDeathShitWhennewRoundBegins();
-        print("Here");
+       // UIHandler.Instance.showCountDown();
     }
 
     private void Awake()
     {
         Instance = this;
 
+       
         levels = Resources.LoadAll("Levels", typeof(GameObject));
         playerManagers = new PlayerManager[playerCount];
         RemainingPlayers = 4;
         SetupNewLevel();
+       
     }
 
     private void SetupNewLevel()
@@ -115,11 +119,7 @@ public class GameManager : MonoBehaviour
     {
         foreach(PlayerManager pm in playerManagers)
         {
-            //if(pm.IsAlive)
-            //{
-            //    pm.score++;
-            //    ScoreManager.Instance.showScore(pm.playerID, pm.score);
-            //}
+            
         }
     }
 
