@@ -166,8 +166,8 @@ public class PlayerController : WrappableObject
 
     private void Move()
     {
-        print(Mathf.Abs(velocity.x));
-        float direction = Input.GetAxis("Horizontal");
+       // print(Mathf.Abs(velocity.x));
+        float direction = playerInput.GetAxis("Horizontal");
         if(animator != null)
         {
             if (direction == 0)
@@ -273,11 +273,14 @@ public class PlayerController : WrappableObject
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (playerManager.isInvincible)
+        Debug.Log("col enter 1");
+        if (!playerManager.isInvincible)
         {
+         //   Debug.Log("col enter 2");
             if (GroundCheck() && velocity.y != 0f)
             {
                 velocity.y = 0f;
+                Debug.Log("Ground");
             }
             WallCheck();
             CeilingCheck();

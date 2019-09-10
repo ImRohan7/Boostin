@@ -91,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436440430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.24, y: -3.81, z: 0}
+  m_LocalPosition: {x: 1.211, y: -3.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 98144598}
@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455443417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.33, y: -3.81, z: 0}
+  m_LocalPosition: {x: -1.222, y: -3.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 98144598}
@@ -181,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956008139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.33, y: 1.298, z: 0}
+  m_LocalPosition: {x: -1.301, y: 1.298, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 98144598}
@@ -211,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090514562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.24, y: 1.298, z: 0}
+  m_LocalPosition: {x: 1.28, y: 1.298, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 98144598}
@@ -312,8 +312,8 @@ MonoBehaviour:
   wallCheckSlot3: {fileID: 7639204345171219129}
   ceilingCheckSlot1: {fileID: 1956008140}
   ceilingCheckSlot2: {fileID: 2090514563}
-  verticalCheckDistance: 0.5
-  horizontalCheckDistance: 1
+  verticalCheckDistance: 2.5
+  horizontalCheckDistance: 2
   obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -354,7 +354,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07000005, y: -1.2610779}
+  m_Offset: {x: -0.0046372414, y: -1.2383873}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -365,8 +365,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.72, y: 5.1078444}
-  m_EdgeRadius: 0
+  m_Size: {x: 2.882059, y: 5.3237147}
+  m_EdgeRadius: 0.15
 --- !u!1 &1290976427844758
 GameObject:
   m_ObjectHideFlags: 0
