@@ -31,6 +31,8 @@ public class BitchManager : MonoBehaviour
         numRounds = 0;
 
         bitchArray = new int[] { BWins, TWins, CWins, HWins };
+
+        showScoreonScreen();
     }
 
     public int[] increaseBitchWin(ref int bitchWhichWon)
@@ -56,5 +58,14 @@ public class BitchManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void showScoreonScreen()
+    {
+      //  ScoreManager.Instance.initVars();
+        ScoreManager.Instance.showScore(0, BWins);
+        ScoreManager.Instance.showScore(1, TWins);
+        ScoreManager.Instance.showScore(2, CWins);
+        ScoreManager.Instance.showScore(3, HWins);
     }
 }
