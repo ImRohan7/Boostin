@@ -8,7 +8,7 @@ using TMPro;
  * Displaying twitch stuff
  */ 
 
-public class DisplayStats : MonoBehaviour
+public class DisplayUI : MonoBehaviour
 {
 
     public int ID; // player id
@@ -25,6 +25,12 @@ public class DisplayStats : MonoBehaviour
     public void updateScore(int iScore)
     {
         txtScore.text = iScore.ToString();
+    }
+
+    // 
+    public void show_countdown_Timer()
+    {
+
     }
     
 }

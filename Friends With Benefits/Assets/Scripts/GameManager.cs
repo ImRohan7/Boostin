@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
 
         Scene loadedLevel = SceneManager.GetActiveScene();
         SceneManager.LoadScene(loadedLevel.buildIndex);
+     //   bm.showScoreonScreen();
     }
 
 
@@ -126,22 +127,28 @@ public class GameManager : MonoBehaviour
                 {
                     print("Bitch B Wins!");
                     bm.increaseBitchWin(ref bm.BWins);
+                    //ScoreManager.Instance.showScore(p.playerID, bm.BWins);
                 }
                 else if(p.playerID == 1)
                 {
                     print("Bitch T Wins!");
                     bm.increaseBitchWin(ref bm.TWins);
+                   // ScoreManager.Instance.showScore(p.playerID, bm.TWins);
                 }
                 else if(p.playerID == 2)
                 {
                     print("Bitch C Wins!");
                     bm.increaseBitchWin(ref bm.CWins);
+                    //ScoreManager.Instance.showScore(p.playerID, bm.CWins);
                 }
                 else if (p.playerID == 3)
                 {
                     print("Bitch H Wins!");
                     bm.increaseBitchWin(ref bm.HWins);
+                   // ScoreManager.Instance.showScore(p.playerID, bm.HWins);
                 }
+
+                bm.showScoreonScreen();
             }
        }
         if(!bm.CheckForWin())

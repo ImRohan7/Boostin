@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
     public GameObject parent_ScoreWidgets;
 
     [SerializeField]
-    private DisplayStats[] displayStats;
+    private DisplayUI[] displayStats;
 
     public int counter = 0;
 
@@ -30,11 +30,10 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        displayStats = new DisplayStats[players];
-        displayStats = parent_ScoreWidgets.transform.GetComponentsInChildren<DisplayStats>();
-
+       // DontDestroyOnLoad(gameObject);
+        Debug.Log("This");
+        initVars();
     }
-
 
 
     public void showScore(int id, int score)
@@ -42,9 +41,10 @@ public class ScoreManager : MonoBehaviour
         displayStats[id].updateScore(score);
     }
 
-    // Update is called once per frame
-    void Update()
+   public void initVars()
     {
-        
+        parent_ScoreWidgets = GameObject.Find("Score Widgets");
+        displayStats = new DisplayUI[players];
+        displayStats = parent_ScoreWidgets.transform.GetComponentsInChildren<DisplayUI>();
     }
 }
