@@ -2145,6 +2145,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1460615488622447827, guid: 80cc8a5dd64bb354a9e27464e118427f,
+        type: 3}
+      propertyPath: _userData.inputBehaviors.Array.data[0]._joystickAxisSensitivity
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80cc8a5dd64bb354a9e27464e118427f, type: 3}
 --- !u!1001 &2294628859436540320

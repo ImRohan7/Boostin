@@ -166,13 +166,19 @@ public class PlayerController : WrappableObject
 
     private void Move()
     {
-        float direction = playerInput.GetAxis("Horizontal");
+        print(Mathf.Abs(velocity.x));
+        float direction = Input.GetAxis("Horizontal");
         if(animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(direction));
-
+            if (direction == 0)
+            {
+                animator.SetBool("isRunning", false);
+            }
+            else
+            {
+                animator.SetBool("isRunning", true);
+            }
         }
-        //animator.SetBool("isRunning", true);
         // clamping the drag (enabling hard turns)
         if (direction > 0)
         {
