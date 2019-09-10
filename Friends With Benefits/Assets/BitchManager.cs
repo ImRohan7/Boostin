@@ -23,7 +23,7 @@ public class BitchManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Debug.Log("This Bm");
+     
         BWins = 0;
         TWins = 0;
         CWins = 0;

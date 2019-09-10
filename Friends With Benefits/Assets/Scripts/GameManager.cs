@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject levelHolder;
     public GameObject playerHolder;
 
+    public int restartTime;
+
     public int playerCount;
 
     [Header("PREFAB REFERENCES")]
@@ -180,7 +182,7 @@ public class GameManager : MonoBehaviour
         if(!bm.CheckForWin())
         {
             UIHandler.Instance.showCountDown();
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(restartTime);
             //TO DO: Add restarting and keeping track of rounds
             RestarLevel();
             yield return null;

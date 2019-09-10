@@ -31,11 +31,8 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // DontDestroyOnLoad(gameObject);
-        Debug.Log("This");
        
     }
-
 
     public void showScore(int id, int score)
     {
