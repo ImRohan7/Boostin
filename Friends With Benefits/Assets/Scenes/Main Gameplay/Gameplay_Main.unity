@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f768bab5f119e8843897cb7d7d44be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0.5, y: 1.5, z: 10}
+  position: {x: 0.5, y: 1.6, z: 10}
   speed: 1
   right: 0
   up: 0
@@ -1779,7 +1779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f768bab5f119e8843897cb7d7d44be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0.5, y: -0.5, z: 10}
+  position: {x: 0.5, y: -0.6, z: 10}
   speed: 1
   right: 0
   up: 0

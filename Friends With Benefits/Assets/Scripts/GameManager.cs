@@ -126,14 +126,14 @@ public class GameManager : MonoBehaviour
         timer += Time.deltaTime;
         if((int)timer > 30)
         {
-            int x = UnityEngine.Random.Range(0, 1);
+            int x = UnityEngine.Random.Range(0, 2);
             if(x == 0)
             {
                 GameObject.Find("LavaLeft").GetComponent<MoveLava>().right = true;
                 GameObject.Find("LavaRight").GetComponent<MoveLava>().right = true;
 
             }
-            else
+            else if(x == 1)
             {
                 GameObject.Find("LavaDown").GetComponent<MoveLava>().up = true;
                 GameObject.Find("LavaUp").GetComponent<MoveLava>().up = true;
