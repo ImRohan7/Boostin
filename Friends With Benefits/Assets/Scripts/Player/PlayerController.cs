@@ -123,6 +123,15 @@ public class PlayerController : WrappableObject
             }
         }
 
+        if(GroundCheck() == true)
+        {
+            if(animator!=null)
+            {
+                animator.SetBool("isJumping", false);
+
+            }
+        }
+
         //update rigidbody velocity
         rb.velocity = velocity;
     }
@@ -140,6 +149,7 @@ public class PlayerController : WrappableObject
         if (GroundCheck() && playerInput.GetButtonDown("Jump")) // jump
         {
             velocity.y = jumpForce;
+            animator.SetBool("isJumping", true);
         }
         else if(!GroundCheck() && canDoubleJump && playerInput.GetButtonDown("Jump")) //double jump
         {
@@ -149,6 +159,7 @@ public class PlayerController : WrappableObject
         else if(!GroundCheck() && playerInput.GetButtonUp("Jump") && velocity.y > 0f) // variable jump
         {
             velocity.y /= 2.5f;
+            animator.SetBool("isJumping", true);
 
         }
     }
@@ -156,16 +167,23 @@ public class PlayerController : WrappableObject
     private void Move()
     {
         float direction = playerInput.GetAxis("Horizontal");
+        if(animator != null)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(direction));
+
+        }
         //animator.SetBool("isRunning", true);
         // clamping the drag (enabling hard turns)
         if (direction > 0)
         {
             direction = 1.0f;
+            transform.eulerAngles = new Vector3(0, 0, 0); // Flipped
             if (velocity.x < 0)
                 velocity.x = 0;
         }
         else if (direction < 0)
         {
+            transform.eulerAngles = new Vector3(0, 180, 0); // Flipped
             direction = -1.0f;
             if (velocity.x > 0)
                 velocity.x = 0;
@@ -277,6 +295,7 @@ public class PlayerController : WrappableObject
 
     private bool GroundCheck()
     {
+        //animator.SetBool("isJumping", false);
         bool check1 = Physics2D.Raycast(groundCheckSlot1.position, Vector2.down, verticalCheckDistance, obstacleLayerMask);
         bool check2 = Physics2D.Raycast(groundCheckSlot2.position, Vector2.down, verticalCheckDistance, obstacleLayerMask);
 
