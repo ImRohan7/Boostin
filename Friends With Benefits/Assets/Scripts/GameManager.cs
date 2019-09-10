@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
@@ -16,12 +17,12 @@ public class GameManager : MonoBehaviour
     [Header("PREFAB REFERENCES")]
     public GameObject playerManager;
 
-    private Object[] levels;
+    private UnityEngine.Object[] levels;
     private GameObject currentLevel;
 
     private PlayerManager[] players;
 
-    public Object PlayLevel;
+    public UnityEngine.Object PlayLevel;
 
     public PlayerManager[] playerManagers; // holds the player managers in Game
 
@@ -30,8 +31,11 @@ public class GameManager : MonoBehaviour
 
     private BitchManager bm;
 
+    private int numAlive;
+
     private void Start()
     {
+        numAlive = 0;
         bm = GameObject.Find("Bitch Manager").GetComponent<BitchManager>();   
     }
 
@@ -95,18 +99,17 @@ public class GameManager : MonoBehaviour
     {
         foreach(PlayerManager pm in playerManagers)
         {
-            if(pm.IsAlive)
-            {
-                pm.score++;
-                ScoreManager.Instance.showScore(pm.playerID, pm.score);
-            }
+            //if(pm.IsAlive)
+            //{
+            //    pm.score++;
+            //    ScoreManager.Instance.showScore(pm.playerID, pm.score);
+            //}
         }
     }
 
     private void Update()
     {
-        players = Object.FindObjectsOfType<PlayerManager>();
-        if (players.Length == 1 || RemainingPlayers == 1)
+        if (RemainingPlayers == 1)
         {
             StartCoroutine(EndRound());
         }
@@ -114,6 +117,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndRound()
     {
+       RemainingPlayers = 0;
        foreach(PlayerManager p in playerManagers)
        {
             if(p.IsAlive)

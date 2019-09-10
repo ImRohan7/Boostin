@@ -472,6 +472,55 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6247837298501915996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &557640548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557640550}
+  - component: {fileID: 557640549}
+  m_Layer: 0
+  m_Name: Bitch Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &557640549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557640548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb5667f5a92498429670769a96ced3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BWins: 0
+  TWins: 0
+  CWins: 0
+  HWins: 0
+  numRounds: 0
+  bitchArray: 
+--- !u!4 &557640550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557640548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 666.033, y: 476.3854, z: -2070.8623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757539468 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 646625328655462849, guid: 859b1ed262be9474887a1d0bb54b8fbc,
@@ -1241,6 +1290,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6247837298515065275, guid: f88134cf3a17de7449286dead8b082a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247837298515065268, guid: f88134cf3a17de7449286dead8b082a9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 443e6956c840a264d8411495ff8ee12a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f88134cf3a17de7449286dead8b082a9, type: 3}
 --- !u!1001 &7837235108426575930
