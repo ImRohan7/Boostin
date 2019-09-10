@@ -58,7 +58,7 @@ public class TwitchChat : MonoBehaviour
         if (twitchClient.Available > 0)
         {
             var message = reader.ReadLine(); //Read in the current message
-
+            print(message);
             if (message.Contains("PRIVMSG"))
             {
                 //Get the users name by splitting it from the string
