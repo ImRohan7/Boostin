@@ -18,6 +18,13 @@ public class MoveLava : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.right * 1f * Time.deltaTime;
+        if(gameObject.tag == "Right")
+        {
+            transform.position += -transform.right * 1f * Time.deltaTime;
+        }
+        else if(gameObject.tag == "Left")
+        {
+            transform.position += transform.right * 1f * Time.deltaTime;
+        }
     }
 }

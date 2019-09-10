@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 583938786}
   m_Layer: 0
   m_Name: LavaRight
-  m_TagString: Untagged
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -618,8 +618,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 809587885
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c0a90f0d01d1c724f9d51c80af125b79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f768bab5f119e8843897cb7d7d44be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0.3, y: 0.5, z: 10}
+  position: {x: 1.315, y: 0.5, z: 10}
 --- !u!1 &757539468 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 646625328655462849, guid: 859b1ed262be9474887a1d0bb54b8fbc,
@@ -906,7 +906,7 @@ GameObject:
   - component: {fileID: 1978245861}
   m_Layer: 0
   m_Name: LavaLeft
-  m_TagString: Untagged
+  m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f768bab5f119e8843897cb7d7d44be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: -0.3, y: 0.5, z: 10}
+  position: {x: -0.315, y: 0.5, z: 10}
 --- !u!1 &2030995895
 GameObject:
   m_ObjectHideFlags: 0
