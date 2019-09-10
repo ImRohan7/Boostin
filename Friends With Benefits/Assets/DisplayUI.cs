@@ -21,7 +21,7 @@ public class DisplayUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        img_logo_original = transform.Find("BG").GetComponent<Sprite>();
+        img_logo_original = img_logo.sprite;
        
     }
 
