@@ -309,9 +309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1181f7aa792f572438d4712eb05abc3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: pinakj
-  password: oauth:otv8k21jrhucymz0emya1hq9zrjh6n
-  channelName: pinakj
+  username: chaosinalunchbox
+  password: oauth:yp8ddthy3tfn1rdrfm22wgh84sj46w
+  channelName: chaosinalunchbox
 --- !u!4 &96843941
 Transform:
   m_ObjectHideFlags: 0
