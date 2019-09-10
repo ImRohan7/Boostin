@@ -23,7 +23,7 @@ public class BitchManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        Debug.Log("This Bm");
         BWins = 0;
         TWins = 0;
         CWins = 0;
@@ -32,7 +32,7 @@ public class BitchManager : MonoBehaviour
 
         bitchArray = new int[] { BWins, TWins, CWins, HWins };
 
-        showScoreonScreen();
+       
     }
 
     public int[] increaseBitchWin(ref int bitchWhichWon)
